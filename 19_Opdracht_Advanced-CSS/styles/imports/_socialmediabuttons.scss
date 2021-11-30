@@ -1,0 +1,76 @@
+@mixin content ($color){
+    background-color:$color;
+    width:100px;
+    height:75px;
+    text-align:$alignLeft;
+    img{
+        width:30px;
+        margin:20px 35px 20px 35px;
+    }
+    a{
+        color:white;
+        font-weight:bold;
+        display:inline;
+        margin-top:10px;
+        margin-left:90px;
+    }
+    &:hover{
+        width:400px;
+        transform: translate(0 -100px);
+        text-align:$alignLeft;
+    }
+    .visible{
+        opacity:1;
+        text-align:$alignLeft;
+        margin-left:100px; 
+        margin-top:-45px;     
+        width:200px;
+    }
+    &:hover .visible{
+        opacity:1;    
+        text-align:$alignLeft;
+        margin-left:80px; 
+        margin-top:-45px;     
+        width:200px;
+    }
+}
+
+@mixin transition{
+    transition-duration:500ms;
+    transition-property:width, transform;
+    transition-timing-function: linear;
+}
+
+.containers{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    margin-top:600px;
+    margin-bottom:100PX;
+    overflow:hidden;
+    .social-media{
+        &__blog{
+            @include content (#e17b77);
+            @include transition;  
+        }
+        &__twitter {
+            @include content (#00aced);
+            @include transition;
+        }
+        &__linkedin{
+            @include content (#007bb6);
+            @include transition;
+        }
+        &__facebook{
+            @include content (#3b5998);
+            @include transition;
+        }
+        &__github {
+            @include content (#333);
+            @include transition;
+        }
+    }
+}
+
+
+      
